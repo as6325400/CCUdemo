@@ -264,13 +264,6 @@ export async function init()
         for(var j = 0; j < 30; ++j)
             isUsed[i][j] = false;
     }
-    if(localStorage.courses !== undefined)
-    {
-        // clear localStorage.courses and localStorage.used
-        localStorage.removeItem("courses"); // delete localStorage.courses
-        localStorage.used = JSON.stringify(isUsed); // set localStorage.used to isUsed (all false)
-        localStorage.course_list = JSON.stringify(courses);
-    }
     if(localStorage.course_list !== undefined)
     {   
         var course_list = JSON.parse(localStorage.course_list);
@@ -311,14 +304,14 @@ export async function init()
     }
     else
     {
+        localStorage.used = JSON.stringify(isUsed); // set localStorage.used to isUsed (all false)
         openModal("modal1");
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
         {
             print.style.display = "none";
             openModal("modal2");
         }
-        localStorage.used = JSON.stringify(isUsed);
-        localStorage.courses = JSON.stringify(courses);
+        localStorage.course_list = JSON.stringify([]);
         document.getElementById("curriculum").style.visibility = "hidden";
         $("#accordion").hide();
         var list = $("#course").get()
