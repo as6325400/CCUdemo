@@ -238,6 +238,7 @@ export function resetTable()
 
 export async function init()
 {   
+    await resetTable();
     console.log("init");
     let print = document.getElementById("print")
     var sel1 = document.getElementById("Select1");
@@ -315,6 +316,7 @@ export async function init()
             $(list).append(`<div id = "default">尚無任何課程資訊，輸入資訊以建立您的課表</div>`)
         }
         localStorage.used = JSON.stringify(isUsed);
+        await resetTable();
     }
     else
     {
@@ -337,6 +339,8 @@ export async function init()
         print.style.display = "none";
     // 初始化設定學分數
     display_credit();
+    await resetTable();
+
 }
 
 window.onload = function(){
@@ -362,7 +366,11 @@ export function clear()
         $("#accordion").hide();
         var list = $("#course").get()
         $(list).append(`<div id = "default">尚無任何課程資訊，輸入資訊以建立您的課表</div>`)
+<<<<<<< HEAD
         // var storedcourses = JSON.parse(localStorage.courses);
+=======
+        //var storedcourses = JSON.parse(localStorage.courses);
+>>>>>>> 56eb8c8b6fa154cb9512cf5a6368030ff98a4c2e
         var storedUsed = JSON.parse(localStorage.used);
         // for(var i = 0; i < storedcourses.length; i++)
         // {
@@ -385,7 +393,7 @@ export function clear()
         var cou = [];
         localStorage.used = JSON.stringify(storedUsed);
         localStorage.removeItem("courses");
-        localStorage.removeItem("course_list")
+        localStorage.removeItem("course_list");
         localStorage.courses = JSON.stringify(cou);
         getCourse();
     }
