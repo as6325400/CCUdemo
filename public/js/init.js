@@ -366,11 +366,7 @@ export function clear()
         $("#accordion").hide();
         var list = $("#course").get()
         $(list).append(`<div id = "default">尚無任何課程資訊，輸入資訊以建立您的課表</div>`)
-<<<<<<< HEAD
-        // var storedcourses = JSON.parse(localStorage.courses);
-=======
         //var storedcourses = JSON.parse(localStorage.courses);
->>>>>>> 56eb8c8b6fa154cb9512cf5a6368030ff98a4c2e
         var storedUsed = JSON.parse(localStorage.used);
         // for(var i = 0; i < storedcourses.length; i++)
         // {

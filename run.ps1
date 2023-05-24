@@ -1,5 +1,5 @@
 $URL = "http://localhost"
-$PORT = 8000
+$PORT = 3000
 
 Start-Process "nodemon.cmd" "--exec npm start"
 Start-Sleep -Seconds 1
