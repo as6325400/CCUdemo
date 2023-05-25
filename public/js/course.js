@@ -251,7 +251,7 @@ function push_to_table(start, end, className, classLocation, classDay, classID, 
     // let list = $("#accordion").get();
     // console.log(list);
     var isUsed = JSON.parse(localStorage.used);
-    var courses = JSON.parse(localStorage.courses);
+    //var courses = JSON.parse(localStorage.courses);
     // $('#accordion > tbody:last-child').append(`<tr><td class = 'td'>${className}</td><td class = 'td'>${classLocation}</td><td class = 'td'>${classDay} ${start} ~ ${end}</td><td class = 'td'><button type = "button" class = "btn-delete inline-flex"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
     // <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
     // </svg>刪除</button></td></tr>`);
@@ -261,7 +261,7 @@ function push_to_table(start, end, className, classLocation, classDay, classID, 
     for(var i = startClass - 1; i < endClass; ++i)
         isUsed[CHINESE_WORD_TO_NUMBER[classDay] - 1][i] = true;
     localStorage.used = JSON.stringify(isUsed);
-    localStorage.courses = JSON.stringify(courses);
+    //localStorage.courses = JSON.stringify(courses);
     getCourse();
     return true;
 }
@@ -365,7 +365,7 @@ function search(){
                 xhr.onload = ()=>{
                     let response = xhr.response;
                     if(response == null)return;
-                    let data = response;
+                    let data = response.rows;
                     if(data == null || data.length == 0)return;
                     // console.log(data)
                     for(var i = 0; i < data.length; i++){
@@ -408,6 +408,7 @@ function search(){
                             getCourse();
                             listBox.innerHTML = "";
                             searchBox.value = "";
+                            listBox.style.height = "0px";
                         });
                     }
                     if(data.length > 5){

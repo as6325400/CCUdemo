@@ -31,7 +31,7 @@ var server = http.createServer(app);
 
 server.listen(port, ()=>{
   if(database == null){
-    console.log('Database Not connected');
+    database.log('Database Not connected');
   }
   database.connect((err)=>{
     if(err){

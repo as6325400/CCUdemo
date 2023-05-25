@@ -28,7 +28,7 @@ try:
             passwd=os.getenv("MYSQL_PASSWORD"),
             db=os.getenv("MYSQL_DATABASE"),
         )
-    elif(usingDB == "postgres"):
+    elif(usingDB == "postgre"):
         conn = psycopg2.connect(os.getenv("DATABASE_URL"), sslmode='require')
     cur = conn.cursor()
     if(usingDB == "mysql"):

@@ -1,6 +1,7 @@
 $URL = "http://localhost"
-$PORT = 3000
+$PORT = 8000
 
-Start-Process "nodemon.cmd" "--exec npm start"
+# Start-Process "heroku" "local --port ${PORT}"
+START-Process "nodemon.cmd" "./bin/www"
 Start-Sleep -Seconds 1
 START-Process chrome.exe "${URL}:${PORT}/" -WindowStyle Maximized

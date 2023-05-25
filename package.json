@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www && npx tailwindcss -i ./public/css/style.css -o ./public/css/tailwind.css --watch --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./public/css/style.css -o ./public/css/tailwind.css --watch --minify"
   },
   "dependencies": {
     "art-template": "^4.13.2",
@@ -23,7 +24,7 @@
     "mkdirp": "^2.1.5",
     "mongoose": "^6.10.3",
     "morgan": "^1.9.1",
-    "mysql2": "^3.3.1",
+    "mysql2": "^3.2.0",
     "nodemon": "^2.0.21",
     "npm": "^9.6.2",
     "path": "^0.12.7",
